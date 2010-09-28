@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=480">
+	<title>Web Draw</title>
+
+	<link rel="stylesheet" media="screen" type="text/css" href="css/layout.css" />
+	<script src="js/jquery-1.4.2.min.js"></script>
+	<script src="js/client.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/JSLINQ.js"></script>
+	<script src="js/history.js"></script>
+	<script src="js/button_event.js"></script>
+</head>
+
+<body id="body">
+<div id="window">
+
+	<!-- canvas -->
+	<div id="container" >
+		<canvas id="drawCanvas" width="340" height="530"></canvas>
+	</div>
+
+
+	<!-- tool -->
+	<div id="toolbar">
+
+		<ul id="colors">
+		<li style="background-color:#000" onmousedown="selCol(this)" class="sel" ><div></div></li>
+		<li style="background-color:#F00" onmousedown="selCol(this)" ><div></div></li>
+		<li style="background-color:#FF0" onmousedown="selCol(this)" ><div></div></li>
+		<li style="background-color:#0F0" onmousedown="selCol(this)" ><div></div></li>
+		<li style="background-color:#909" onmousedown="selCol(this)" ><div></div></li>
+		<li style="background-color:#009" onmousedown="selCol(this)" ><div></div></li>
+		</ul>
+
+		<ul id="buttons">
+		<li id="undo" onclick="Client.undo()" onmousedown="selTool(this)" onmouseout="resetTool(this)" title="Undo"><img src="images/undo.png" /></li>
+		<li id="redo" onclick="Client.redo()" onmousedown="selTool(this)" onmouseout="resetTool(this)" title="Redo"><img src="images/redo.png" /></li>
+		<li id="pencil" onclick="selTool(this)" title="Pencil" class="sel" ><img src="images/pencil.png" /></li>
+		<li id="erase" onclick="selTool(this)" title="Eraser"><img src="images/eraser.png" /></li>
+		</ul>
+		
+		<div id="settings" onmousedown="event.preventDefault()">
+			<div onclick="selSetting(this, 1)" style="font-size:90%;line-height:10px" class="sel">&#9632;</div>
+			<div onclick="selSetting(this, 4)" style="font-size:130%;line-height:10px">&#9632;</div>
+			<div onclick="selSetting(this, 7)" style="font-size:155%;line-height:10px">&#9632;</div>
+			<div onclick="selSetting(this, 11)" style="font-size:180%;line-height:10px">&#9632;</div>
+		</div>
+
+	<article>
+		<p id="status" class="fail">Socket status</p>
+		<p>Users : <span id="connected">0</span></p>
+	</article>
+	
+	</div>
+	
+</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		Draw.initialize();
+		Client.initialize();
+	});
+	</script>
+</body>
+</html>
+

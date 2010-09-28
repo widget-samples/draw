@@ -1,0 +1,11 @@
+.svn
+.svn/*
+tags
+TAGS
+*.orig
+*.swp
+*.bak
+
+.DS_Store
+._*
+

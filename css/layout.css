@@ -1,0 +1,145 @@
+body {
+	font-family:Tahoma;
+	font-size:20px;
+}
+
+
+#window {
+	background-color:threedface;
+position:absolute;
+width:480px;
+height:530px;
+
+	   /*left:100px; top:100px;*/
+	  min-width:480px; min-height:530px;
+
+border:1px solid;
+	   z-index:2;
+}
+
+
+#toolbar {
+
+margin-left:350px; float:none; 
+left:85px;
+width:120px;
+border:1px solid;
+	   border-top-color:threedhighlight;
+	   border-left:0;
+	   border-right-color:threedshadow;
+	   border-bottom-color:threedshadow;
+}
+#toolbar ul {
+margin:0; padding:0;
+	   list-style:none;	
+}
+#toolbar ul li {
+margin:0;padding:0;
+}
+
+
+
+#toolbar #colors li, 
+#toolbar #buttons li {
+float:left;
+width:58px; height:58px;
+
+border:1px solid blue;
+	   border-top-color:threedhighlight;
+	   border-left-color:threedhighlight;
+	   border-right-color:threeddarkshadow;
+	   border-bottom-color:threeddarkshadow;
+}
+
+#toolbar #colors li img,
+#toolbar #buttons li img {
+width:55px; height:55px;
+border:1px solid red;
+	   border-top-color:threedlightshadow;
+	   border-left-color:threedlightshadow;
+	   border-right-color:threedshadow;
+	   border-bottom-color:threedshadow;	
+}
+
+
+#toolbar #colors li.down div, 
+#toolbar #buttons li.down div {
+	background-color:threedface;
+}
+#toolbar #colors:after,
+#toolbar #buttons:after {
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden;
+}
+
+#toolbar #colors li.down, #toolbar #colors li.sel, 
+#toolbar #buttons li.down, #toolbar #buttons li.sel {
+	border-top-color:windowframe;
+	border-left-color:windowframe;
+	border-right-color:threedhighlight;
+	border-bottom-color:threedhighlight;
+}
+#toolbar #buttons li.down img, #toolbar #buttons li.sel img {
+	background-color:threedhighlight;
+	padding-left:1px; padding-top:1px;
+	  border-top-color:threedshadow;
+	  border-left-color:threedshadow;
+	  border-right-color:threedlightshadow;
+	  border-bottom-color:threedlightshadow;	
+}
+
+
+#toolbar #settings {
+border:1px solid;
+	   border-top-color:threedshadow;
+	   border-left-color:threedshadow;
+	   border-right-color:threedhighlight;
+	   border-bottom-color:threedhighlight;
+margin:5px;
+	   margin-left:2px;
+	   margin-top:5px;
+height:120px;
+}
+
+#toolbar #settings > div {
+display:block;
+}
+#toolbar #settings div {
+cursor:default;
+	   text-align:center;	
+	   vertical-align:middle;	
+float:left; width:33%;
+width:45px; height:45px;
+	  margin-bottom:2px;
+	  margin-top:15px;
+}
+#toolbar #settings .sel {
+	background-color:highlight; color:highlighttext;
+}
+
+#toolbar #settings div { 
+margin-left:10px; float:left; 
+}
+
+
+
+#drawCanvas {
+background-color:white;
+overflow:auto;
+
+position:absolute;
+left:0px;
+right:0;
+top:0px;
+	   z-index:3;
+
+border: 1px solid #000;
+}
+
+#container.pencil canvas{ cursor: url(images/pencil.png) 	8  8, auto; }
+#container.erase  canvas{ cursor: url(images/eraser.png) 	8  8, auto; }
+
+
